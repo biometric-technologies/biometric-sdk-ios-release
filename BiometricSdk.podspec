@@ -2,7 +2,7 @@ Pod::Spec.new do |spec|
     spec.name                     = 'BiometricSdk'
     spec.version                  = '0.2'
     spec.homepage                 = 'https://www.iriscan.net'
-    spec.source                   = { :git => 'https://github.com/biometric-technologies/biometric-sdk.git', :tag => '0.2' }
+    spec.source                   = { :git => 'https://github.com/biometric-technologies/biometric-sdk-ios-release.git', :tag => '0.2' }
     spec.authors                  = 'Slava Gornostal'
     spec.license                  = { :type => 'GPL-3.0', :text => 'GNU General Public License v3.0' }
     spec.summary                  = 'Biometric SDK'
