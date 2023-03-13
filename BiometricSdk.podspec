@@ -1,8 +1,8 @@
 Pod::Spec.new do |spec|
     spec.name                     = 'BiometricSdk'
-    spec.version                  = '0.2'
+    spec.version                  = '0.2.1'
     spec.homepage                 = 'https://www.iriscan.net'
-    spec.source                   = { :git => 'https://github.com/biometric-technologies/biometric-sdk-ios-release.git', :tag => '0.2' }
+    spec.source                   = { :git => 'https://github.com/biometric-technologies/biometric-sdk-ios-release.git', :tag => '0.2.1' }
     spec.authors                  = 'Slava Gornostal'
     spec.license                  = { :type => 'GPL-3.0', :text => 'GNU General Public License v3.0' }
     spec.summary                  = 'Biometric SDK'
@@ -13,6 +13,6 @@ Pod::Spec.new do |spec|
     spec.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
     spec.dependency 'TensorFlowLiteObjC', '2.11.0'
                 
-                
-                
+
+
 end

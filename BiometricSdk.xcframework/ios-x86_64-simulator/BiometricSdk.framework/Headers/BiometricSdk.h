@@ -821,9 +821,10 @@ __attribute__((swift_name("FaceMatcher")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("FaceNetModelConfiguration")))
 @interface BiometricSdkFaceNetModelConfiguration : BiometricSdkBase
-- (instancetype)initWithTfliteModelPath:(NSString *)tfliteModelPath inputWidth:(int32_t)inputWidth inputHeight:(int32_t)inputHeight outputLength:(int32_t)outputLength __attribute__((swift_name("init(tfliteModelPath:inputWidth:inputHeight:outputLength:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithTfliteModelPath:(NSString *)tfliteModelPath modelChecksum:(int32_t)modelChecksum inputWidth:(int32_t)inputWidth inputHeight:(int32_t)inputHeight outputLength:(int32_t)outputLength __attribute__((swift_name("init(tfliteModelPath:modelChecksum:inputWidth:inputHeight:outputLength:)"))) __attribute__((objc_designated_initializer));
 @property (readonly) int32_t inputHeight __attribute__((swift_name("inputHeight")));
 @property (readonly) int32_t inputWidth __attribute__((swift_name("inputWidth")));
+@property (readonly) int32_t modelChecksum __attribute__((swift_name("modelChecksum")));
 @property (readonly) int32_t outputLength __attribute__((swift_name("outputLength")));
 @property (readonly) NSString *tfliteModelPath __attribute__((swift_name("tfliteModelPath")));
 @end
@@ -986,7 +987,7 @@ __attribute__((swift_name("Interpreter")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("InterpreterImpl")))
 @interface BiometricSdkInterpreterImpl : BiometricSdkBase <BiometricSdkInterpreter>
-- (instancetype)initWithModelPath:(NSString *)modelPath __attribute__((swift_name("init(modelPath:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithModelPath:(NSString *)modelPath modelChecksum:(int32_t)modelChecksum __attribute__((swift_name("init(modelPath:modelChecksum:)"))) __attribute__((objc_designated_initializer));
 - (void)invokeInputs:(NSDictionary<BiometricSdkInt *, id> *)inputs outputs:(BiometricSdkMutableDictionary<BiometricSdkInt *, id> *)outputs __attribute__((swift_name("invoke(inputs:outputs:)")));
 @end
 
@@ -1048,8 +1049,8 @@ __attribute__((swift_name("ResourceHelper")))
 @interface BiometricSdkResourceHelper : BiometricSdkBase
 - (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
 + (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
-- (NSString *)cacheAndGetPathName:(NSString *)name url:(NSString *)url __attribute__((swift_name("cacheAndGetPath(name:url:)")));
-- (BiometricSdkKotlinByteArray *)cacheAndReadName:(NSString *)name url:(NSString *)url __attribute__((swift_name("cacheAndRead(name:url:)")));
+- (NSString *)cacheAndGetPathName:(NSString *)name url:(NSString *)url checksum:(int32_t)checksum __attribute__((swift_name("cacheAndGetPath(name:url:checksum:)")));
+- (BiometricSdkKotlinByteArray *)cacheAndReadName:(NSString *)name url:(NSString *)url checksum:(int32_t)checksum __attribute__((swift_name("cacheAndRead(name:url:checksum:)")));
 - (BiometricSdkKotlinByteArray *)readUrl:(NSString *)url __attribute__((swift_name("read(url:)")));
 @end
 
